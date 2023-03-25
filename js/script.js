@@ -87,9 +87,10 @@ serieA.forEach((currentTeam) =>{
     let {squadra, PF, FS} = currentTeam;
     PF = Math.floor(Math.random() * 114);
     FS = Math.floor(Math.random() * 10000);
-    const teamZ = Object.create(currentTeam)
-    teamZ.squadra = squadra;
-    teamZ.FS = FS;
+    // const teamZ = Object.create(currentTeam)
+    // teamZ.squadra = squadra;
+    // teamZ.FS = FS;
+    teamZ = {squadra, FS};
     serieZ.push(teamZ)
 });
 console.log(serieZ);
@@ -98,3 +99,24 @@ console.log(serieZ);
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 // Usiamo i nuovi metodi degli array foreach o filter.
+
+/**
+ * Description generate a new array with numbers in between numberA and numberB
+ * @param {array} array
+ * @param {number} numberA
+ * @param {number} numberB
+ * @returns {array}
+ */
+function myFunction(myArray = [], numberA = 1, numberB = 10){
+    let i = 1;
+    while (myArray.length < ((numberB - 1) - numberA)){
+        myArray.push(numberA + i);
+        i++
+    }
+    const newArray = myArray.filter(number => number != numberA && number != numberB);
+    return newArray;
+}
+
+console.log(myFunction());
+
+  
