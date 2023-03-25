@@ -3,6 +3,39 @@
 // Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
 // Stampare a schermo la bici con peso minore utilizzando destructuring e template literal
 
+const bikeArray = [
+    {
+        brand: "Aethos",
+        weight: 6.1,
+    },
+    {
+        brand: "Cannondale",
+        weight: 7.5,
+    },
+    {
+        brand: "Giant",
+        weight: 7.3,
+    },
+    {
+        brand: "Tarmac",
+        weight: 8.6,
+    },
+    {
+        brand: "Scott",
+        weight: 5.9,
+    }
+]
+
+let lowestWeight = bikeArray[0].weight;
+bikeArray.forEach((curBike) => {
+    lower = curBike.weight;
+    if(lower < lowestWeight){
+        lowestWeight = lower;
+        lowestBrand = curBike.brand;
+
+    }
+})
+console.log(`La bici più leggera é ${lowestBrand} con un peso di ${lowestWeight}kg`);
 
 
 // Snack2
