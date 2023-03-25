@@ -23,20 +23,20 @@ const bikeArray = [
     {
         brand: "Scott",
         weight: 5.9,
-    }
+    },
 ]
 
-let lowestWeight = bikeArray[0].weight;
+
+let lowestWeight = Number.POSITIVE_INFINITY;
 bikeArray.forEach((curBike) => {
-    lower = curBike.weight;
+    const {brand, weight} = curBike;
+    lower = weight;
     if(lower < lowestWeight){
         lowestWeight = lower;
-        lowestBrand = curBike.brand;
-
+        lowestBrand = brand;
     }
 })
 console.log(`La bici più leggera é ${lowestBrand} con un peso di ${lowestWeight}kg`);
-
 
 // Snack2
 // Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
@@ -45,7 +45,54 @@ console.log(`La bici più leggera é ${lowestBrand} con un peso di ${lowestWeigh
 // Punti fatti e falli subiti.
 // Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 
-
+const serieA = [
+    {
+        squadra: "Roma",
+        PF: 0,
+        FS: 0,
+    },
+    {
+        squadra: "Lazio",
+        PF: 0,
+        FS: 0,
+    },
+    {
+        squadra: "Fiorentina",
+        PF: 0,
+        FS: 0,
+    },
+    {
+        squadra: "Milan",
+        PF: 0,
+        FS: 0,
+    },
+    {
+        squadra: "Inter",
+        PF: 0,
+        FS: 0,
+    },
+    {
+        squadra: "Juventus",
+        PF: 0,
+        FS: 0,
+    },
+    {
+        squadra: "Parma",
+        PF: 0,
+        FS: 0,
+    },
+];
+const serieZ = [];
+serieA.forEach((currentTeam) =>{
+    let {squadra, PF, FS} = currentTeam;
+    PF = Math.floor(Math.random() * 114);
+    FS = Math.floor(Math.random() * 10000);
+    const teamZ = Object.create(currentTeam)
+    teamZ.squadra = squadra;
+    teamZ.FS = FS;
+    serieZ.push(teamZ)
+});
+console.log(serieZ);
 
 // Snack Bonus
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
